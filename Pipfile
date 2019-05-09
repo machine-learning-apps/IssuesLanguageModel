@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+fastai = {path = "./fastai"}
+mistune = "*"
+ipykernel = "*"
+beautifulsoup4 = "*"
+ipdb = "*"
+torch = "*"
+torchvision = "*"
+ipywidgets = "*"
+gcsfs = "*"
+timeout-decorator = "*"
+textacy = "*"
+cld2-cffi = "*"
+
+[requires]
+python_version = "3.7"

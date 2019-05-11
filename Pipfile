@@ -6,7 +6,6 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-fastai = {path = "./fastai"}
 mistune = "*"
 ipykernel = "*"
 beautifulsoup4 = "*"
@@ -18,6 +17,9 @@ gcsfs = "*"
 timeout-decorator = "*"
 textacy = "*"
 cld2-cffi = "*"
+regex = "*"
+flask = "*"
+fastai = "*"
 
 [requires]
 python_version = "3.7"

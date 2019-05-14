@@ -1,3 +1,5 @@
+# the gpu image: docker run --runtime=nvidia -it --net=host --ipc=host -p 3006:3006 -v /data/shared-storage/:/ds hamelsmu/ml-gpu-lite
+# this image (cpu): https://cloud.docker.com/u/github/repository/docker/github/mdtok
 FROM python:3.7-slim-stretch
 
 RUN apt-get update 

@@ -105,7 +105,7 @@ class LangModel:
     def fit(self):
         "train the model."
         if self.one_cycle:
-            learn.fit_one_cycle(cyc_len=1,
+            self.learn.fit_one_cycle(cyc_len=1,
                                 max_lr=self.lr * 2,
                                 callbacks=self.callbacks)
         else:

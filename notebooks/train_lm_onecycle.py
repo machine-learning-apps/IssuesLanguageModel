@@ -8,7 +8,7 @@ import pandas as pd
 from pathlib import Path
 from fastai.distributed import *
 
-path = Path('lang_model/')
+path = Path('lang_model_onecycle/')
 
 def pass_through(x):
     return x
@@ -18,8 +18,7 @@ data_lm = load_data(path, bs=128)
 learn = language_model_learner(data=data_lm,
                                arch=AWD_LSTM,
                                pretrained=False)
-learn.load('bestmodel')
-# callbacks
+
 escb = EarlyStoppingCallback(learn=learn, patience=4)
 smcb = SaveModelCallback(learn=learn)
 rpcb = ReduceLROnPlateauCallback(learn=learn, patience=3)
@@ -28,6 +27,6 @@ callbacks = [escb, smcb, rpcb, csvcb]
 
 learn.to_parallel()
 
-learn.fit_one_cycle(cyc_len=3,
+learn.fit_one_cycle(cyc_len=1,
                     max_lr=1e-2*3,
                     callbacks=callbacks)

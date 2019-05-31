@@ -39,7 +39,7 @@ class wandbCallback(Callback):
 
 
 class LangModel:
-    def __init__(self, data_path: str='lm_tune_data_smalltest', 
+    def __init__(self, data_path: str='lm_tune_data',
                  emb_sz: int=400, qrnn: bool=False, bidir:bool =False, 
                  n_layers: int=3, n_hid: int=1150, bs: int=64, bptt: int=70, 
                  lr: float=1e-2*3, wd: float=.01, one_cycle: bool=False) -> None:

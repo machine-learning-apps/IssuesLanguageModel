@@ -1,4 +1,4 @@
-# the gpu image: docker run --runtime=nvidia -it --net=host --ipc=host -p 3006:3006 -v /data/shared-storage/hamel/mdtokenizer:/ds hamelsmu/ml-gpu-lite
+# the gpu image: docker run --runtime=nvidia -it --net=host --ipc=host -p 3006:3006 -v <host_dir>:/ds hamelsmu/ml-gpu-lite
 # this image (cpu): https://cloud.docker.com/u/github/repository/docker/github/mdtok
 FROM python:3.7-slim-stretch
 

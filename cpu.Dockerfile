@@ -1,4 +1,4 @@
-# the gpu image: docker run --runtime=nvidia -it --net=host --ipc=host -p 3006:3006 -v /data/shared-storage/:/ds hamelsmu/ml-gpu-lite
+# the gpu image: docker run --runtime=nvidia -it --net=host --ipc=host -p 3006:3006 -v /data/shared-storage/hamel/mdtokenizer:/ds hamelsmu/ml-gpu-lite
 # this image (cpu): https://cloud.docker.com/u/github/repository/docker/github/mdtok
 FROM python:3.7-slim-stretch
 
@@ -15,10 +15,8 @@ RUN pip3 install torchvision
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-
-COPY mdparse.py .
 COPY notebooks notebooks/
 
-EXPOSE 8823
+EXPOSE 7654
 
-CMD ["jupyter notebook --no-browser --allow-root --port=8823 --NotebookApp.token='$pass'"]
+CMD ["sh", "-c", "jupyter notebook --no-browser --allow-root --port=7654 --NotebookApp.token='$pass'"]

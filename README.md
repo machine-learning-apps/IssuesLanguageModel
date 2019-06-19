@@ -2,4 +2,4 @@
 [![Powered-By-Fast-AI](https://img.shields.io/badge/fastai%20v1.5.3%20%20-blueviolet.svg?logo=github)](https://github.com/fastai/fastai)
 [![Powered-By-Fast-AI](https://img.shields.io/badge/Weights%20&%20Biases-black.svg?logo=google-analytics)](TODO)
 
-# A Language Model Trained On 9M+ GitHub Issues For Transfer Learning
+# A Language Model Trained On 15M+ GitHub Issues For Transfer Learning

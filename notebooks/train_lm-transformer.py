@@ -27,6 +27,6 @@ callbacks = [escb, smcb, rpcb, csvcb]
 learn.to_parallel()
 
 learn.fit_one_cycle(cyc_len=1,
-                    max_lr=1e-2,
+                    max_lr=1e-3*2,
                     tot_epochs=10,
                     callbacks=callbacks)

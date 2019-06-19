@@ -8,7 +8,7 @@ import pandas as pd
 from pathlib import Path
 from fastai.distributed import *
 
-path = Path('lang_model/')
+path = Path('lang_model_onecycle_resume/')
 
 def pass_through(x):
     return x
@@ -28,6 +28,4 @@ callbacks = [escb, smcb, rpcb, csvcb]
 
 learn.to_parallel()
 
-learn.fit_one_cycle(cyc_len=3,
-                    max_lr=1e-2*3,
-                    callbacks=callbacks)
+learn.fit(epochs=3, lr=1e-5, callbacks=callbacks)

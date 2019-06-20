@@ -4,7 +4,7 @@ Hyper-parameter tuning was conducted with [Weights & Biases](https://www.wandb.c
 
 ![](images/parallel_coordinates.png)
 
-The blue lines corresponding to the best-performing models on the validation set.  An interactive version of this visualization is available for viewing in the [Weights and Biases project](https://app.wandb.ai/github/issues_lang_model).  A list of the hyper-parameters along with the definition of each is avaialable in the [docstring of the model object](https://github.com/machine-learning-apps/IssuesLanguageModel/blob/master//hyperparam_sweep/lm_tune.py#L41-L69).
+The purple lines corresponding to the best-performing models on the validation set.  An interactive version of this visualization is available for viewing in the [Weights and Biases project](https://app.wandb.ai/github/issues_lang_model).  A list of the hyper-parameters along with the definition of each is avaialable in the [docstring of the model object](https://github.com/machine-learning-apps/IssuesLanguageModel/blob/master//hyperparam_sweep/lm_tune.py#L41-L69).
 
 ## Files For Hyper-Parameter Tuning
 

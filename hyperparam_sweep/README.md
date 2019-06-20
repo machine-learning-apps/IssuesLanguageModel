@@ -27,4 +27,4 @@ lm_tune.py --bptt=63 --bs=83 --emb_sz=836 --lr=0.002319621255816015 --n_hid=3273
 
 ## Notes About Hyper-Parameter Methodology
 
-We let the tuning run for approximately one week on 24 total GPUs (3 [p3.16xlarge](https://aws.amazon.com/ec2/instance-types/p3/) instances with 8 GPUs each.).  We ran the on 20% of the training data in order more quickly search the hyper-parameter space.  The best parameters found from tuning are used to choose parameters on the full data.  Please see the main [README](/REAMDE.md) of this repo on how to locate the final model.
+We let the tuning run for approximately one week on 24 total GPUs (3 [p3.16xlarge](https://aws.amazon.com/ec2/instance-types/p3/) instances with 8 GPUs each.).  We ran the sweep on 20% of the training data in order more quickly search the hyper-parameter space.  The best parameters found from tuning are used to choose parameters on the full data.  Please see the main [README](/REAMDE.md) of this repo on how to locate the final model.

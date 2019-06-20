@@ -1,4 +1,4 @@
-## Hyper-Parameter Sweep With Wandb
+## Hyper-Parameter Sweep With Weights & Biases
 
 Hyper-parameter tuning was conducted with [Weights & Biases](https://www.wandb.com/) an experiment tracking tool that also has the ability to orchestrate hyper-parameter tuning and store model artifacts such as weights and logs.  You can view the results of hyper-parameter tuning in [this project](https://app.wandb.ai/github/issues_lang_model).  Below is a visualization that highlights the parameters associated with the best-performing models on the validation set:
 

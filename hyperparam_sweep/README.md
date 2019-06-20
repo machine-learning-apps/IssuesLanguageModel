@@ -19,11 +19,13 @@ The purple lines corresponding to the best-performing models on the validation s
 
 ## Best Run
 
-[This set of parameters](https://app.wandb.ai/github/issues_lang_model/runs/q5ilech3/overview) performed the best against the validation set.  You can see the model parameters and logs here.  According to [the logs for this run](https://app.wandb.ai/github/issues_lang_model/runs/q5ilech3/logs), you can run this model with the same parameters with this command:
+[This set of parameters](https://app.wandb.ai/github/issues_lang_model/runs/q5ilech3/overview) performed the best against the validation set.  You can see the model parameters and logs here.  According to [the logs for this run](https://app.wandb.ai/github/issues_lang_model/runs/q5ilech3/logs), these are the hyperparameters associated with the best model:
 
 ```bash
 lm_tune.py --bptt=63 --bs=83 --emb_sz=836 --lr=0.002319621255816015 --n_hid=3273 --n_layers=4 --one_cycle=True --wd=0.01077738751171411
 ```
+
+Note that you cannot simply run this command as you must first have the data prepared in the right directory.  Please refer to the [notebooks](/notebooks) folder of this repo for a walk-through on how to train the model.
 
 ## Notes About Hyper-Parameter Methodology
 

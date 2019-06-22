@@ -42,7 +42,8 @@ class LangModel:
     def __init__(self, data_path: str='lang_model',
                  emb_sz: int=800, qrnn: bool=False, bidir:bool =False, 
                  n_layers: int=4, n_hid: int=2500, bs: int=104, bptt: int=67, 
-                 lr: float=0.0013, wd: float=.012, one_cycle: bool=True) -> None:
+                 lr: float=0.0013, wd: float=.012, one_cycle: bool=True,
+                 cycle_len: int=1) -> None:
         """ Instantiate AWD_LSTM Language Model with hyper-parameters.
         
         data_path: str
@@ -68,7 +69,7 @@ class LangModel:
            {'emb_sz': 400, 'n_hid': 1150, 'n_layers': 3, 'pad_token': 1, 'qrnn': False, 'bidir': False, 'output_p': 0.1,
             'hidden_p': 0.15, 'input_p': 0.25, 'embed_p': 0.02,'weight_p': 0.2, 'tie_weights': True, 'out_bias': True}
         """
-        self.lr, self.wd, self.one_cycle = lr, wd, one_cycle
+        self.lr, self.wd, self.one_cycle, self.cycle_len = lr, wd, one_cycle, cycle_len
         awd_lstm_lm_config.update(dict(emb_sz=emb_sz, qrnn=qrnn, bidir=bidir, n_layers=n_layers, n_hid=n_hid))
         #log params
         wb_handle = wandb.init(config=awd_lstm_lm_config)
@@ -105,7 +106,7 @@ class LangModel:
     def fit(self):
         "train the model."
         if self.one_cycle:
-            self.learn.fit_one_cycle(cyc_len=1,
+            self.learn.fit_one_cycle(cyc_len=self.cycle_len,
                                      max_lr=self.lr * 2,
                                      callbacks=self.callbacks)
         else:

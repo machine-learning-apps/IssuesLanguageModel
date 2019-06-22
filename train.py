@@ -39,10 +39,10 @@ class wandbCallback(Callback):
 
 
 class LangModel:
-    def __init__(self, data_path: str='lm_tune_data',
-                 emb_sz: int=400, qrnn: bool=False, bidir:bool =False, 
-                 n_layers: int=3, n_hid: int=1150, bs: int=64, bptt: int=70, 
-                 lr: float=1e-2*3, wd: float=.01, one_cycle: bool=False) -> None:
+    def __init__(self, data_path: str='lang_model',
+                 emb_sz: int=800, qrnn: bool=False, bidir:bool =False, 
+                 n_layers: int=4, n_hid: int=2500, bs: int=104, bptt: int=67, 
+                 lr: float=0.0013, wd: float=.012, one_cycle: bool=True) -> None:
         """ Instantiate AWD_LSTM Language Model with hyper-parameters.
         
         data_path: str
@@ -106,8 +106,8 @@ class LangModel:
         "train the model."
         if self.one_cycle:
             self.learn.fit_one_cycle(cyc_len=1,
-                                max_lr=self.lr * 2,
-                                callbacks=self.callbacks)
+                                     max_lr=self.lr * 2,
+                                     callbacks=self.callbacks)
         else:
             self.learn.fit(epochs=1, lr=self.lr, wd=self.wd, callbacks=self.callbacks)
 

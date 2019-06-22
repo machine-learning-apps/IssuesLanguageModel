@@ -1,5 +1,6 @@
-# the gpu image: docker run --runtime=nvidia -it --net=host --ipc=host -p 3006:3006 -v <host_dir>:/ds hamelsmu/ml-gpu-lite
-# this image (cpu): https://cloud.docker.com/u/github/repository/docker/github/mdtok
+# build this container: docker build -t hamelsmu/ml-gpu-issue-lang-model -f gpu.Dockerfile .
+# run this container: docker run --runtime=nvidia -it --net=host --ipc=host -v <host_dir>:/ds hamelsmu/ml-gpu-issue-lang-model bash
+
 FROM hamelsmu/ml-gpu-lite
 
 COPY requirements.txt .

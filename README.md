@@ -6,7 +6,7 @@
 
 TODO
 
-# Appendix: Location of Model Artifacts For Best Language Model
+# Appendix: Location of Language Model Artifacts
 
 ### Google Cloud Storage
 

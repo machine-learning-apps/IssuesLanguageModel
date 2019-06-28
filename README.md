@@ -10,20 +10,20 @@ TODO
 
 ### Google Cloud Storage
 
-- **model for inference** (965 MB): `https://storage.googleapis.com/issue_label_bot/model/lang_model/models_22zkdqlr/trained_model_22zkdqlr.pkl`
+- **model for inference** (965 MB): https://storage.googleapis.com/issue_label_bot/model/lang_model/models_22zkdqlr/trained_model_22zkdqlr.pkl
 
 
 - **encoder (for fine-tuning w/a classifier)** (965 MB): 
-`https://storage.googleapis.com/issue_label_bot/model/lang_model/models_22zkdqlr/trained_model_encoder_22zkdqlr.pth`
+https://storage.googleapis.com/issue_label_bot/model/lang_model/models_22zkdqlr/trained_model_encoder_22zkdqlr.pth
 
 
 - **fastai.databunch** (27.1 GB):
-`https://storage.googleapis.com/issue_label_bot/model/lang_model/data_save.pkl`
+https://storage.googleapis.com/issue_label_bot/model/lang_model/data_save.pkl
 
 
 - **checkpointed model** (2.29 GB): 
-`https://storage.googleapis.com/issue_label_bot/model/lang_model/models_22zkdqlr/best_22zkdqlr.pth`
+https://storage.googleapis.com/issue_label_bot/model/lang_model/models_22zkdqlr/best_22zkdqlr.pth
 
 ### Weights & Biases Run
 
-`https://app.wandb.ai/github/issues_lang_model/runs/22zkdqlr/overview`
+https://app.wandb.ai/github/issues_lang_model/runs/22zkdqlr/overview

@@ -20,6 +20,7 @@ defusedxml==0.6.0
 entrypoints==0.3
 fastai==1.0.53.post3
 fastprogress==0.1.21
+flask-session==0.3.1
 flask==1.0.2
 ftfy==4.4.3
 gcsfs==0.2.1
@@ -54,7 +55,6 @@ networkx==2.3
 notebook==5.7.8
 numexpr==2.6.9
 numpy==1.16.4
-nvidia-ml-py3==7.352.0
 oauthlib==3.0.1
 packaging==19.0
 pandas==0.24.2
@@ -74,7 +74,6 @@ pyasn1==0.4.5
 pycparser==2.19
 pyemd==0.5.1
 pygments==2.4.2
-pynvx==1.0.0
 pyparsing==2.4.0
 pyphen==0.9.5
 pyrsistent==0.15.2
@@ -100,8 +99,6 @@ textacy==0.7.1
 thinc==7.0.4
 timeout-decorator==0.4.1
 toolz==0.9.0
-torch==1.1.0
-torchvision==0.2.2.post3
 tornado==6.0.2
 tqdm==4.32.2
 traitlets==4.3.2

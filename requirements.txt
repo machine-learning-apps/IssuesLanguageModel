@@ -1,3 +1,4 @@
+-i https://pypi.org/simple
 appnope==0.1.0
 attrs==19.1.0
 backcall==0.1.0
@@ -24,6 +25,7 @@ ftfy==4.4.3
 gcsfs==0.2.1
 google-auth-oauthlib==0.3.0
 google-auth==1.6.3
+gunicorn==19.9.0
 html5lib==1.0.1
 idna==2.8
 ijson==2.3

@@ -117,7 +117,8 @@ python-Levenshtein = "==0.12.0"
 PyYAML = "==5.1"
 Send2Trash = "==1.5.0"
 Werkzeug = "==0.15.2"
-gunicorn = "*"
+gunicorn = "==19.9.0"
+flask-session = "*"
 
 [requires]
 python_version = "3.7"

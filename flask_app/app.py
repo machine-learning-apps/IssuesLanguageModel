@@ -4,6 +4,7 @@ import hmac
 from flask import (abort, Flask, session, render_template,
                    session, redirect, url_for, request,
                    flash, jsonify)
+from flask_session import Session
 from urllib import request
 from pathlib import Path
 from inference import InferenceWrapper, pass_through
@@ -25,9 +26,11 @@ def init_language_model():
     path = Path('./model_files')
     path.mkdir(exist_ok=True)
 
-    request.urlretrieve(model_url, path/'model.pkl')  
+    request.urlretrieve(model_url, path/'model.pkl') 
+    print('Loading model.')
     app.inference_wrapper = InferenceWrapper(model_path=path,
                                              model_file_name='model.pkl')
+    print('Finished loading model.')
     
 
 @app.route("/healthz", methods=["GET"])

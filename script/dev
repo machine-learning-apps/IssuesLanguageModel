@@ -1,0 +1,5 @@
+#!/bin/sh
+
+docker run -e FLASK_ENV=$FLASK_ENV \
+-e TOKEN=$TOKEN \
+-p 3000:$PORT hamelsmu/issuefeatures

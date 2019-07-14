@@ -84,9 +84,9 @@ def fetch_issues(owner, repo):
 def verify_token(request):
     """Make sure request is from a trusted party."""
     # https://blog.miguelgrinberg.com/post/restful-authentication-with-flask
-    token = request.headers['Token']
+    password_hash = request.headers['Token']
 
-    if not pwd_context.verify(token, os.getenv('TOKEN')):
+    if not pwd_context.verify(os.getenv('TOKEN'), password_hash):
         LOG.warning('Token verification failed.')
         abort(400, description="not authenticated with token.")
 

@@ -5,12 +5,12 @@ This directory contains manifests for the backend of the microservice that retur
 This is currently running on a GKE cluster.
 
 
-## GCP Project Name??
+## issue-label-bot-dev
 
 There is a dedicated instance running in
 
-* **GCP project**: ??
-* **cluster**: ??
+* **GCP project**: issue-label-bot-dev
+* **cluster**: github-api-cluster
 * **namespace**: mlapp
 
 Deploying it

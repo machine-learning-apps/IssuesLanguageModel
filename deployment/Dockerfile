@@ -41,9 +41,16 @@ RUN pip install \
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+
+# copy files for api server
+RUN apt install wget
+RUN wget https://storage.googleapis.com/issue_label_bot/model/lang_model/models_22zkdqlr/trained_model_22zkdqlr.pkl -O model.pkl
+
 COPY flask_app flask_app/
+RUN cp model.pkl flask_app/
+WORKDIR flask_app/
+RUN mkdir -p model_files
 
 EXPOSE 3000 80 443
-WORKDIR flask_app/
-
-CMD gunicorn -w 3 app:app -b 0.0.0.0:$PORT
+CMD python app.py
+#CMD gunicorn -w 1 app:app -b 0.0.0.0:$PORT

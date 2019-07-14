@@ -62,7 +62,8 @@ def text():
     LOG.warning(f'prediction requested for {str(data)}')
     
     # make prediction: you can only return strings with api
-    return jsonify(app.inference_wrapper.get_pooled_features(data['text']).detach().numpy().tolist())
+    # decode with np.fromstring(val, dtype='<f4')
+    return app.inference_wrapper.get_pooled_features(data['text']).detach().numpy().tostring()
 
 @app.route("/all_issues/<string:owner>/<string:repo>", methods=["POST"])
 def fetch_issues(owner, repo):

@@ -100,9 +100,6 @@ def is_public(owner, repo):
 
 if __name__ == "__main__":
     init_language_model()
-
-    # make sure things reload
-    # app.jinja_env.auto_reload = True
-    # app.config['TEMPLATES_AUTO_RELOAD'] = True
+    
     # you cannot use debugging or multiple threads for model to work!
     app.run(debug=False, host='0.0.0.0', port=os.getenv('PORT'), threaded=False)

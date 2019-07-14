@@ -4,6 +4,44 @@
 
 # A Language Model Trained On 16M+ GitHub Issues For Transfer Learning
 
+**Background:**  [Issue Label Bot](https://github.com/machine-learning-apps/Issue-Label-Bot) predicts 3 generic issue labels: `bug`, `feature request` and `question`.  However, it would be nice to predict personalized issue labels instead of generic ones.  To accomplish this, we can use the issues that are already labeled in a repository as training data for a model that can predict personalized issue labels.  Once challenge with this approach is there is often a small number of labeled issues in each repository from which to train this data.  In order to mitigate this concern, we train a self-supervised language model over 16 million GitHub issues and use the hidden states of this model as a feature extractor.  This method of [transfer-learning](http://nlp.fast.ai/) allows us to to build models on smaller datasets.
+
+# End-Product: An API that returns embeddings from GitHub Issue Text.
+
+The manifest files in [/deployment](/deployment) define a service that will return 2400 dimensional embeddings given the text of an issue.  The api endpoints are hosted on https://gh-issue-labeler.com/
+
+All routes expect `POST` requests with a header containing a `Token` field. Below is  a list of endpoints:
+
+1. `https://gh-issue-labeler.com/text`:  expects a json payload of `title` and `body` and returns a single 2,400 dimensional vector that represents latent features of the text. For example, this is how you would interact with this endpoint from python:
+
+    ```python
+    import requests
+    import json
+    import numpy as np
+    from passlib.apps import custom_app_context as pwd_context
+
+    API_ENDPOINT = 'https://gh-issue-labeler.com/text'
+    API_KEY = 'YOUR_API_KEY' # Contact maintainers to get this
+
+    # A toy example of a GitHub Issue title and body
+    data = {'title': 'Fix the issue', 
+            'body': 'I am encountering an error\n when trying to push the button.'}
+
+    # sending post request and saving response as response object 
+    r = requests.post(url=API_ENDPOINT,
+                    headers={'Token':pwd_context.hash(API_KEY)},
+                    json=data)
+
+    # convert string back into a numpy array
+    embeddings = np.frombuffer(r.content, dtype='<f4')
+    ```
+
+
+
+2. `https://gh-issue-labeler.com//all_issues/<owner>/<repo>` this will return a numpy array of the shape (# of labeled issues in repo, 2400), as well a list of all the labels for each issue.  This endpoint is still under construction.
+
+# Training the Language Model
+
 TODO
 
 # Appendix: Location of Language Model Artifacts

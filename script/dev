@@ -1,4 +1,5 @@
 #!/bin/sh
+docker pull hamelsmu/issuefeatures-api-cpu
 
 docker run -e FLASK_ENV=$FLASK_ENV \
 -e TOKEN=$TOKEN -e PORT=$PORT \

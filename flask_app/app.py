@@ -86,7 +86,7 @@ def verify_token(request):
     # https://blog.miguelgrinberg.com/post/restful-authentication-with-flask
     token = request.headers['Token']
 
-    if not pwd_context.verify(token, os.getenv('Token')):
+    if not pwd_context.verify(token, os.getenv('TOKEN')):
         LOG.warning('Token verification failed.')
         abort(400, description="not authenticated with token.")
 

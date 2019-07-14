@@ -1,4 +1,5 @@
 
+# for https://cloud.docker.com/u/hamelsmu/repository/docker/hamelsmu/issuefeatures-api-cpu
 FROM python:3.6-slim-stretch
 
 RUN apt-get update 

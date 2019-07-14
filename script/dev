@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "this is the port: $PORT"
+
 docker run -e FLASK_ENV=$FLASK_ENV \
--e TOKEN=$TOKEN \
+-e TOKEN=$TOKEN PORT=$PORT \
 -p 3000:$PORT hamelsmu/issuefeatures-api-cpu

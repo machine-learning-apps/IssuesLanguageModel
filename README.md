@@ -47,7 +47,7 @@ The language model is built with the [fastai](http://nlp.fast.ai/) library.  The
 1. [01_AcquireData.ipynb](/notebooks/01_AcquireData.ipynb): Describes how to acquire and pre-process the data using [mdparse](https://github.com/machine-learning-apps/mdparse), which parses and annotates markdown files.
 2. [02_fastai_DataBunch.ipynb](/notebooks/02_fastai_DataBunch.ipynb):  The fastai library uses an object called a [Databunch](https://docs.fast.ai/basic_data.html#DataBunch) around pytorch's dataloader class to encapuslate additional metadata and functionality.  This notebook walks through the steps of preparing this data structure which will be used by the model for training.
 3. [03_Create_Model.ipynb](/notebooks/03_Create_Model.ipynb): This walks through the process of instantiating the fastai language model, along with callbacks for early stopping, logging and saving of artifacts.  Additionally, this notebook illustrates how to train the model.
-4. [04_Inference.ipynb](/notebooks/04_Inference.ipynb): shows how to use the language model to perform inference in order to extract latent features in the form of a 2,400 dimension vector from GitHub Issue text. This notebook shows how to load the Databunch and model and save only the model for inference.  
+4. [04_Inference.ipynb](/notebooks/04_Inference.ipynb): shows how to use the language model to perform inference in order to extract latent features in the form of a 2,400 dimension vector from GitHub Issue text. This notebook shows how to load the Databunch and model and save only the model for inference.  [/flask_app/inference.py](/flask_app/inference.py) contains utilities that makes the inference process easier.
 
 ### Putting it all together: hyper-parameter tuning
 
@@ -58,10 +58,6 @@ We were able to try 538 different hyper-paramter combinations using Bayesian and
 ![](/hyperparam_sweep/images/parallel_coordinates.png)
 
 The hyperparameter tuning process is described in greater detail in the [hyperparam_sweep](/hyperparam_sweep) folder.
-
-### Inference Utility: [/flask_app/inference.py](/flask_app/inference.py)
-
-This file contains utilities that allows you to perform inference from a saved model.
 
 # Files
  

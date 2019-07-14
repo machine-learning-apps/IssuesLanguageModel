@@ -51,7 +51,8 @@ class InferenceWrapper:
         body = dfdict['body']
         try:
             text = 'xxxfldtitle '+ cls.parse(title) + ' xxxfldbody ' + cls.parse(body)
-        except:
+        except Exception as e:
+            print(e)
             return {'text': 'xxxUnk'}
         return {'text': text}
     

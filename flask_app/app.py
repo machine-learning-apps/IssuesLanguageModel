@@ -32,7 +32,7 @@ def init_language_model():
         request_url.urlretrieve(model_url, path/'model.pkl') 
     
     app.inference_wrapper = InferenceWrapper(model_path=path, model_file_name='model.pkl')
-    print('Finished loading model.')
+    LOG.warning('Finished loading model.')
     
 
 @app.route("/healthz", methods=["GET"])
@@ -52,7 +52,7 @@ def text():
     'body': "some text ....}
     """
     # authenticate the request to make sure it is from a trusted party
-    #verify_token(request)
+    verify_token(request)
 
     # pre-process data
     title = request.json['title']
@@ -62,7 +62,7 @@ def text():
     LOG.warning(f'prediction requested for {str(data)}')
     
     # make prediction: you can only return strings with api
-    # decode with np.fromstring(val, dtype='<f4')
+    # decode with np.frombuffer(request.content, dtype='<f4')
     return app.inference_wrapper.get_pooled_features(data['text']).detach().numpy().tostring()
 
 @app.route("/all_issues/<string:owner>/<string:repo>", methods=["POST"])

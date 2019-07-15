@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ml-gh-issuefeat
-  namespace: mlapp
+  namespace: issuefeat
   annotations:
     kubernetes.io/ingress.global-static-ip-name: gh-issue-labeler
 spec:

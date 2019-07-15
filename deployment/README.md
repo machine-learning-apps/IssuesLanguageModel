@@ -11,7 +11,7 @@ There is a dedicated instance running in
 
 * **GCP project**: issue-label-bot-dev
 * **cluster**: github-api-cluster
-* **namespace**: mlapp
+* **namespace**: issuefeat
 
 Deploying it
 

@@ -24,7 +24,7 @@ Deploying it
 1. Create the secret
 
    ```
-   __gsutil cp gs://github-probots_secrets/issuefeat-secret.yaml /tmp
+   gsutil cp gs://github-probots_secrets/issuefeat-secret.yaml /tmp
    kubectl apply -f /tmp/issuefeat-secret.yaml
    ```
 

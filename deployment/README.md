@@ -24,8 +24,8 @@ Deploying it
 1. Create the secret
 
    ```
-   gsutil cp gs://github-probots_secrets/ml-app-inference-secret.yaml /tmp
-   kubectl apply -f /tmp/ml-app-inference-secret.yaml
+   __gsutil cp gs://github-probots_secrets/issuefeat-secret.yaml /tmp
+   kubectl apply -f /tmp/issuefeat-secret.yaml
    ```
 
 1. Create the ingress

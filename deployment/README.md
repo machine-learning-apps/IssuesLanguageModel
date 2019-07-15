@@ -25,11 +25,11 @@ Deploying it
 
    ```
    gsutil cp gs://github-probots_secrets/issuefeat-secret.yaml /tmp
-   kubectl apply -f /tmp/issuefeat-secret.yaml
+   kubectl -n issuefeat apply -f /tmp/issuefeat-secret.yaml
    ```
 
 1. Create the ingress
 
    ```
-   kubectl apply -f ingress.yaml
+   kubectl -n issuefeat apply -f ingress.yaml
    ```

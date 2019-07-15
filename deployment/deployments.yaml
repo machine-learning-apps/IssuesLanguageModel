@@ -41,7 +41,7 @@ spec:
         - name: PORT
           value: '3000'
         - name: authors
-          value: 'b'
+          value: 'f'
         ports:
         - containerPort: 443
         - containerPort: 80

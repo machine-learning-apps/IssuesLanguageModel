@@ -1,4 +1,4 @@
-# This repo is deprecated development has continued here: https://github.com/kubeflow/code-intelligence/tree/master/Issue-Embeddings
+# This repo is deprecated. Development has continued here: https://github.com/kubeflow/code-intelligence/tree/master/Issue-Embeddings
 
 
 [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/) [![License: MIT](https://img.shields.io/badge/License-MIT-darkgreen.svg)](https://opensource.org/licenses/MIT)
